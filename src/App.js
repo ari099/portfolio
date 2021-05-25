@@ -1,25 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import anime from 'animejs';
+import Home from './Home';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+/**
+ * Navigation React Component....
+ */
+// class Navigation extends Component {
+//   constructor(props) {
+//     super(props);
+//   }
+//
+//   render() {
+//     return(
+//       <svg class="App-navigation"></svg>
+//     );
+//   }
+// }
+
+/**
+ * Main Application React Component
+ */
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentPage:"home"
+    };
+  }
+
+  render() {
+    return(
+      <Home />
+    );
+  }
 }
 
 export default App;
