@@ -2,6 +2,9 @@ import './Home.css';
 import anime from 'animejs';
 import React, { Component } from "react";
 
+/**
+ * Home Page React Component
+ */
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -69,17 +72,24 @@ class Home extends Component {
       'I': 'm 336.40612,159.58396 h 79.14534 l -0.4979,34.54482 h -16.17734 l 0.49869,44.3293 h 16.17655 l -0.4979,40.65173 h -78.28833 l -0.49715,-40.65173 h 15.4056 l 0.60532,-44.3293 h -15.37549 z'
     };
 
-    anime({
+    let leavingHome = anime.timeline({
       targets: `.${letter}-top`,
       d: positions[letter],
       easing: 'easeInOutQuad',
       duration: 62.5
     });
+
+    leavingHome.add({
+      targets: '.Home-letters',
+      opacity: [1, 0],
+      easing: 'linear',
+      duration: 1000
+    });
   }
 
   componentDidMount() {
       anime({
-        targets: '.App-letters',
+        targets: '.Home-letters',
         opacity: [0, 1],
         easing: 'easeInOutQuad',
         duration: 1000
