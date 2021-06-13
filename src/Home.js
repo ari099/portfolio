@@ -83,7 +83,10 @@ class Home extends Component {
       targets: '.Home-letters',
       opacity: [1, 0],
       easing: 'linear',
-      duration: 1000
+      duration: 1000,
+      complete: () => {
+        this.props.openPage(letter);
+      }
     });
   }
 

@@ -1,12 +1,28 @@
-.App-navigation {
+.Page {
   height: 100px;
   position: absolute;
-  top: 0;
-  width: 100%;
-  padding: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 75%;
+  border: 1px solid darkgreen;
+  box-shadow: 0px 0px 5px 0px lightgray;
 }
-.App-nav-item {
-  text-decoration: none;
-  margin: 20px;
-  color: red;
+.Page-controls {
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: gray;
+}
+.Page-controls:hover {
+  color: black;
+  cursor: pointer;
+}
+.Page-controls:visited {
+  color: gray;
+}
+.Page-controls:active {
+  color: lightgray;
 }
