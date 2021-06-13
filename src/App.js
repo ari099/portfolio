@@ -26,13 +26,6 @@ class Page extends Component {
       easing: 'easeInOutQuad',
       duration: 1000
     });
-
-    anime({
-      targets: '.Page-controls',
-      color: this.letterColors[this.props.current],
-      easing: 'easeInOutQuad',
-      duration: 1000
-    });
   }
 
   render() {
@@ -65,8 +58,16 @@ class App extends Component {
   }
 
   closePage() {
-    this.setState({
-      isOpen: false
+    anime({
+      targets: '.Page',
+      opacity: [1, 0],
+      easing: 'easeInOutQuad',
+      duration: 500,
+      complete: () => {
+        this.setState({
+          isOpen: false
+        });
+      }
     });
   }
 
