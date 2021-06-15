@@ -1,6 +1,9 @@
 import './App.css';
 import anime from 'animejs';
 import Home from './Home';
+import About from './About';
+import Repertoire from './Repertoire';
+import Info from './Info';
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -16,6 +19,13 @@ class Page extends Component {
       'R': 'red',
       'I': 'gray'
     };
+
+    this.pages = {
+      'A': <About />,
+      'R': <Repertoire />,
+      'I': <Info />
+    };
+
     this.state = {
       current: this.props.current
     };
@@ -32,6 +42,10 @@ class Page extends Component {
       targets: '.Page',
       opacity: [0, 1],
       height: ['0%', '75%']
+    });
+    startPage.add({
+      targets: '.About-page-left, .About-page-right',
+      opacity: [0, 1]
     });
     startPage.add({
       targets: '.Page-mini-nav',
@@ -51,7 +65,9 @@ class Page extends Component {
   render() {
     return (
       <div className="Page">
-        <div className="Page-view"></div>
+        <div className="Page-view">
+          {this.pages[this.state.current]}
+        </div>
         <FontAwesomeIcon className="Page-controls"
           icon={faTimes} onClick={this.props.closePage} />
         <svg className="Page-mini-nav">
@@ -66,7 +82,7 @@ class Page extends Component {
             r={(this.state.current === 'R') ? 7.5 : 5}
             fill={(this.state.current === 'R') ? this.letterColors[this.state.current] : 'black'} />
           <circle className="Page-nav-button navI"
-            cx="52.25" cy="12.5"
+            cx="53.75" cy="12.5"
             onClick={() => this.switchPages('I')}
             r={(this.state.current === 'I') ? 7.5 : 5}
             fill={(this.state.current === 'I') ? this.letterColors[this.state.current] : 'black'} />
@@ -96,12 +112,23 @@ class App extends Component {
   }
 
   closePage() {
-    anime({
+    let closing = anime.timeline({
+      easing: 'easeInOutQuad',
+      duration: 500,
+    });
+
+    closing.add({
+      targets: '.About-page-left, .About-page-right',
+      opacity: [1, 0]
+    });
+    closing.add({
+      targets: '.Page-mini-nav',
+      opacity: [1, 0]
+    });
+    closing.add({
       targets: '.Page',
       opacity: [1, 0],
       height: ['75%', '0%'],
-      easing: 'easeInOutQuad',
-      duration: 500,
       complete: () => {
         this.setState({
           isOpen: false
