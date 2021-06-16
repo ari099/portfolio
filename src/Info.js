@@ -16,8 +16,7 @@ class Info extends Component {
 
   render() {
     return (
-      <>
-      </>
+      <p className="Repertoire-test">Info</p>
     );
   }
 }

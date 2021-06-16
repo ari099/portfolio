@@ -16,8 +16,7 @@ class Repertoire extends Component {
 
   render() {
     return (
-      <>
-      </>
+      <p className="Repertoire-test">Repertoire</p>
     );
   }
 }

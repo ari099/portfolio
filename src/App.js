@@ -35,7 +35,7 @@ class Page extends Component {
   componentDidMount() {
     let startPage = anime.timeline({
       easing: 'easeInOutQuad',
-      duration: 750
+      duration: 500
     });
 
     startPage.add({
@@ -44,7 +44,7 @@ class Page extends Component {
       height: ['0%', '75%']
     });
     startPage.add({
-      targets: '.About-page-left, .About-page-right',
+      targets: '.Page-view',
       opacity: [0, 1]
     });
     startPage.add({
@@ -59,7 +59,20 @@ class Page extends Component {
    * colored circle to a regular one
    */
   switchPages(letter) {
-    this.setState({ current: letter });
+    let pageSwitchAnimation = anime.timeline({
+      easing: 'easeInOutQuad',
+      duration: 250
+    });
+
+    pageSwitchAnimation.add({
+      targets: '.Page-view',
+      opacity: [1, 0],
+      complete: () => this.setState({ current: letter })
+    });
+    pageSwitchAnimation.add({
+      targets: '.Page-view',
+      opacity: [0, 1]
+    });
   }
 
   render() {
@@ -114,7 +127,7 @@ class App extends Component {
   closePage() {
     let closing = anime.timeline({
       easing: 'easeInOutQuad',
-      duration: 500,
+      duration: 250,
     });
 
     closing.add({
