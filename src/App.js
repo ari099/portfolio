@@ -131,7 +131,7 @@ class App extends Component {
     });
 
     closing.add({
-      targets: '.About-page-left, .About-page-right',
+      targets: '.Page-view',
       opacity: [1, 0]
     });
     closing.add({
