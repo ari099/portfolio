@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Arcade Heading';
+  src: url(ARCADE_N.TTF);
+}
+@font-face {
+  font-family: 'Arcade Text';
+  src: url(ARCADE_N.TTF)
+}
 .About-page-left {
   position: absolute;
   top: 0;
@@ -11,6 +19,15 @@
   right: 0;
   bottom: 0;
   width: 50%;
+}
+.About-page-right-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Arcade Text';
+  font-size: 10pt;
+  color: gray;
 }
 .About-profile-pic {
   position: absolute;
@@ -41,14 +58,6 @@
   transform: translate(-50%, -50%);
 }
 
-@font-face {
-  font-family: 'Arcade Heading';
-  src: url(ARCADE_N.TTF);
-}
-@font-face {
-  font-family: 'Arcade Text';
-  src: url(ARCADE_N.TTF)
-}
 .About-heading {
   color: #06F;
   font-family: 'Arcade Heading';

@@ -34,7 +34,7 @@ class Page extends Component {
 
   componentDidMount() {
     let startPage = anime.timeline({
-      easing: 'easeInOutQuad',
+      easing: 'easeOutElastic(1, .8)',
       duration: 500
     });
 
