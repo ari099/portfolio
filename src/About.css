@@ -17,9 +17,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 200px;
-  width: 200px;
-  border-radius: 100px;
+  height: 300px;
+  width: 300px;
+  border-radius: 150px;
   border: 5px solid white;
 }
 .About-profile-top-background {
@@ -39,4 +39,30 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@font-face {
+  font-family: 'Arcade Heading';
+  src: url(ARCADE_N.TTF);
+}
+@font-face {
+  font-family: 'Arcade Text';
+  src: url(ARCADE_N.TTF)
+}
+.About-heading {
+  color: #06F;
+  font-family: 'Arcade Heading';
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translate(-50%, 0);
+}
+.About-text {
+  color: gray;
+  font-family: 'Arcade Text';
+  font-size: 7.5pt;
+  position: absolute;
+  left: 50%;
+  bottom: 45px;
+  transform: translate(-50%, 0);
 }

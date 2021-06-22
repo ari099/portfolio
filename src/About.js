@@ -18,8 +18,13 @@ class About extends Component {
   render() {
     return (
       <>
-        <div className="About-profile-top-background"></div>
-        <img className="About-profile-pic" src={ari} />
+        <div className="About-page-left">
+          <img className="About-profile-pic" src={ari} /><br />
+          <h3 className="About-heading">Ariel Lorenzo</h3>
+          <p className="About-text">Full-Stack Web Developer</p>
+        </div>
+        <div className="About-page-right">
+        </div>
       </>
     );
   }
